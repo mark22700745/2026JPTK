@@ -52,8 +52,7 @@ a{color:inherit}
 .eyebrow{font-size:12px;letter-spacing:.16em;color:var(--muted);font-weight:700}
 h1{margin:5px 0 6px;font-size:clamp(30px,7vw,46px);line-height:1.15;letter-spacing:.035em}
 .sub{color:var(--muted);font-size:14px}
-.pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
-.pill,.tag{
+.tag{
   display:inline-flex;align-items:center;gap:4px;
   border:1px solid var(--line);
   background:rgba(255,250,244,.78);
@@ -101,9 +100,6 @@ h1{margin:5px 0 6px;font-size:clamp(30px,7vw,46px);line-height:1.15;letter-spaci
   box-shadow:0 2px 8px rgba(93,72,55,.03);
 }
 .btn:hover,.btn.active{background:var(--accent2)}
-.btn.edit-on{background:var(--accent);border-color:var(--accent);color:white}
-.btn.save{background:#edf2ec}
-.btn.export{background:#f9f3eb}
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -200,26 +196,6 @@ h1{margin:5px 0 6px;font-size:clamp(30px,7vw,46px);line-height:1.15;letter-spaci
   border-radius:12px;
   padding:10px;
 }
-.editable[contenteditable="true"]{
-  outline:none;
-  background:#fff7d9;
-  border-radius:6px;
-  box-shadow:0 0 0 2px #fff7d9;
-}
-.editable[contenteditable="true"]:focus{
-  background:#fff2b9;
-  box-shadow:0 0 0 2px #ecd995;
-}
-.edit-tip{
-  display:none;
-  margin:12px 0 0;
-  padding:10px 12px;
-  background:#fff5d8;
-  border:1px solid #efdfaa;
-  border-radius:12px;
-  font-size:12.5px;
-}
-body.editing .edit-tip{display:block}
 footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:720px){
   .wrap{padding:11px 10px 48px}
@@ -245,7 +221,7 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 }
 
 @media print{
-  .toolbar-wrap,.edit-tip,.actions{display:none!important}
+  .toolbar-wrap,.actions{display:none!important}
   body{background:white}
   .wrap{max-width:none}
   .day{break-inside:avoid}
@@ -421,6 +397,20 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
   .meal-item summary:after{display:none}
 }
 
+
+/* Day 2：明治神宮開運木鈴－手機現場日文小卡 */
+.kodama-section{margin:14px 0 8px;padding:14px;border:1px solid #d9c5a9;border-radius:16px;background:linear-gradient(135deg,#fff9f0,#f3eee4)}
+.kodama-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;color:#715a45;font-size:14px}
+.kodama-chip{display:inline-block;font-size:11px;padding:3px 9px;background:#e9ddca;color:#745940;border-radius:99px;font-weight:750}
+.kodama-steps{margin-top:9px;font-size:12.5px;line-height:1.8;color:#675949}
+.kodama-instruction{margin-top:13px;color:#71563f;font-size:12px;font-weight:800}
+.kodama-jp{margin-top:7px;padding:16px 12px;border:1px solid #d3bc9e;border-radius:13px;background:#fffefa;color:#43352d;font-size:clamp(18px,4.6vw,23px);font-weight:850;line-height:1.75;letter-spacing:.015em;overflow-wrap:anywhere;user-select:text}
+.kodama-zh{margin-top:7px;font-size:12.5px;color:var(--muted)}
+.kodama-buttons{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.kodama-buttons a,.kodama-buttons button{display:inline-block;cursor:pointer;border:1px solid #dfcdb7;border-radius:9px;background:#fffdf8;color:#695441;font-size:12px;text-decoration:none;padding:6px 9px;line-height:1.5}
+.kodama-buttons .kodama-copy{background:#81664c;color:white;border-color:#81664c;font-weight:700}
+.kodama-tip{font-size:12px;color:#7d694f;line-height:1.8;margin-top:11px;padding:10px;border-radius:10px;background:rgba(255,255,255,.65)}
+@media(max-width:720px){.kodama-section{padding:11px}.kodama-jp{padding:13px 11px}}
 </style>
 </head>
 <body>
@@ -429,13 +419,6 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="eyebrow">JAPAN TRIP 2026 · 12 DAYS</div>
 <h1 class="editable" data-key="title">東京・富士山 2026｜12日旅行手冊</h1>
 <div class="sub editable" data-key="subtitle">2026/11/12（四）～11/23（一）｜2 人｜大眾交通</div>
-<div class="pills">
-<span class="pill">✈️ 華航 CI100 / CI101</span>
-<span class="pill">🗻 富士山 × 🍂 銀杏</span>
-<span class="pill">🚃 大眾交通＋河口湖包車</span>
-<span class="pill">🥚 蛋奶素</span>
-</div>
-<div class="edit-tip">✏️ 編輯模式已開啟：黃色文字都可直接改。「💾 暫存到本機」只會保存在目前瀏覽器；要把修改真正寫進檔案，請按「📥 儲存成新版 HTML」。</div>
 </header>
 <div class="toolbar-wrap">
 <div class="toolbar">
@@ -447,9 +430,6 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <button class="btn" data-filter="shopping">購物</button>
 <button class="btn" id="expand">全部展開</button>
 <button class="btn" id="collapse">全部收合</button>
-<button class="btn" id="edit">✏️ 編輯</button>
-<button class="btn save" id="save" title="儲存在目前瀏覽器，不會改寫原始 HTML 檔案">💾 暫存到本機</button>
-<button class="btn export" id="export" title="把目前修改內容寫進新的 HTML 檔案">📥 儲存成新版 HTML</button>
 </div>
 <div aria-label="日期快速切換" class="date-nav">
 <button class="date-btn active" data-day-target="day1"><b>11/12</b><span>Day 1</span></button>
@@ -477,12 +457,12 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="dayhead-main"><h3 class="editable" data-key="d1-title">Day 1｜11/12（四）｜抵達東京・入住初台</h3><div class="daymeta editable" data-key="d1-hotel">住宿：Port House Hatsudai｜東京都渋谷区本町 1-4-4</div></div>
 <div class="day-right"><span class="tag">東京</span><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="route editable" data-key="d1-route">CI100 台北 09:30 → 成田 13:30 → Skyliner／JR／京王新線 → 初台入住 → 新宿哥吉拉的頭 → AIN SOPH 晚餐</div><div class="row"><b class="time editable" data-key="d1m1-t">09:30–13:30</b><div><span class="editable" data-key="d1m1-c">中華航空 CI100 台北 → 東京成田。</span></div></div><div class="row"><b class="time editable" data-key="d1m2-t">13:30 後</b><div><span class="editable" data-key="d1m2-c">抵達後完成入境、領行李；Skyliner 若已於 Klook 預訂，依 QR Code 兌票並選擇乘車時間。</span></div></div><div class="row"><b class="time editable" data-key="d1m3-t">下午</b><div><span class="place editable" data-key="d1m3-c">Port House Hatsudai</span><div class="note editable" data-key="d1m3-desc">16:00 後入住；先放行李休息。</div></div></div><div class="row"><b class="time editable" data-key="d1m4-t">晚上</b><div><span class="place editable" data-key="d1m4-c">哥吉拉的頭</span><div class="note editable" data-key="d1m4-desc">新宿站東口／歌舞伎町方向前往「哥吉拉的頭」；註記燈光秀時段約 12:00–20:00。</div></div></div><div class="row"><b class="time editable" data-key="d1m5-t">晚餐</b><div><span class="place editable" data-key="d1m5-c">AIN SOPH 素食餐廳 新宿店</span><div class="note editable" data-key="d1m5-desc">18:00–21:00；依列為本日晚餐。</div></div></div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
-<summary><span class="editable" data-key="d1-tr1-title">🚉 成田機場 T2/T3 → 日暮里 → 新宿 → 初台</span></summary>
+<div class="body"><div class="timeline"><div class="route editable" data-key="d1-route">CI100 台北 09:30 → 成田 13:30 → 已購 Skyliner 單程票（成人 2 位／班次自選）→ 日暮里 → JR 山手線／京王新線 → 初台入住 → 新宿哥吉拉的頭 → AIN SOPH 晚餐</div><div class="route editable" data-key="d1-skyliner-voucher">🎟 已購票｜京成 Skyliner 單程（成田機場出發）｜成人 2 位｜彈性日期・班次／座位於兌票時選定（不含 JR 與京王線）。</div><div class="row"><b class="time editable" data-key="d1m1-t">09:30–13:30</b><div><span class="editable" data-key="d1m1-c">中華航空 CI100 台北 → 東京成田。</span></div></div><div class="row"><b class="time editable" data-key="d1m2-t">13:30 後</b><div><span class="editable" data-key="d1m2-c">抵達成田機場、完成入境並領行李後，使用已購「Skyliner 京成電鐵車票」單程票（成田機場出發、成人 2 位）。此票為彈性日期，於憑證有效期內使用，搭乘班次與座位依當天抵達時間兌票選定，未預先指定發車時間。</span></div></div><div class="row"><b class="time editable" data-key="d1m3-t">下午</b><div><span class="place editable" data-key="d1m3-c">Port House Hatsudai</span><div class="note editable" data-key="d1m3-desc">16:00 後入住；先放行李休息。</div></div></div><div class="row"><b class="time editable" data-key="d1m4-t">晚上</b><div><span class="place editable" data-key="d1m4-c">哥吉拉的頭</span><div class="note editable" data-key="d1m4-desc">新宿站東口／歌舞伎町方向前往「哥吉拉的頭」；註記燈光秀時段約 12:00–20:00。</div></div></div><div class="row"><b class="time editable" data-key="d1m5-t">晚餐</b><div><span class="place editable" data-key="d1m5-c">AIN SOPH 素食餐廳 新宿店</span><div class="note editable" data-key="d1m5-desc">18:00–21:00；依列為本日晚餐。</div></div></div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<summary><span class="editable" data-key="d1-tr1-title">🚉 成田機場 T2 → 日暮里（已購 Skyliner）→ 新宿 → 初台</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d1-tr1-tool">京成 Skyliner → JR 山手線 → 京王新線</span></div>
-<div><b>流程：</b><span class="editable" data-key="d1-tr1-flow">成田 T2/T3 先到 Skyliner 兌票處，以 QR Code 在櫃檯／自動售票機選乘車時間 → 搭 Skyliner 到日暮里 → 依「JR線」指標轉 JR 山手線到新宿 → 在新宿依「京王新線／都營新宿線」指標轉京王新線 1 站到初台 → 步行至住宿。</span></div>
-<div class="transport-tip editable" data-key="d1-tr1-tip">Skyliner 為全車指定席；明確指定這條進東京路線。新宿站轉乘動線長，帶行李建議預留 15～20 分鐘。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d1-tr1-tool">已購 京成 Skyliner 單程票（成人 2 位）→ JR 山手線 → 京王新線</span></div>
+<div><b>流程：</b><span class="editable" data-key="d1-tr1-flow">成田機場 T2（空港第2ビル站）→ 持 Skyliner 電子憑證依票券指示辦理兌票及指定席、選擇合適班次 → 搭 Skyliner 到日暮里 → 轉 JR 山手線到新宿 → 依「京王新線／都營新宿線」指標轉京王新線 1 站至初台 → 步行前往 Port House Hatsudai。</span></div>
+<div class="transport-tip editable" data-key="d1-tr1-tip">🎫 已購票：Skyliner 京成電鐵車票｜單程票（成田機場出發）｜2 位成人｜彈性日期。乘車日期須在憑證有效期內；班次、座位於兌票時確認，沒有預先固定時間。JR 山手線與京王新線需另行付費；新宿轉乘帶行李建議預留 15～20 分鐘。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d1-tr2-title">🚉 初台 → 新宿・哥吉拉的頭</span></summary>
 <div class="transport-content">
@@ -513,10 +493,18 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 </article>
 <article class="day" data-type="tokyo food" id="day2">
 <div class="dayhead">
-<div class="dayhead-main"><h3 class="editable" data-key="d2-title">Day 2｜11/13（五）｜豪德寺招財貓電車・東京媽祖廟・銀杏・SHIBUYA SKY・下北澤</h3><div class="daymeta editable" data-key="d2-hotel">住宿：Port House Hatsudai</div></div>
+<div class="dayhead-main"><h3 class="editable" data-key="d2-title">Day 2｜11/13（五）｜豪德寺・東京媽祖廟・明治神宮木鈴・銀杏・SHIBUYA SKY・下北澤</h3><div class="daymeta editable" data-key="d2-hotel">住宿：Port House Hatsudai</div></div>
 <div class="day-right"><span class="tag">東京</span><button aria-expanded="false" class="toy-toggle" type="button">🧸 玩具行程 <span class="toy-symbol">＋</span></button><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="row"><b class="time editable" data-key="d2m1-t">08:00</b><div><span class="place editable" data-key="d2m1-c">初台 → 三軒茶屋</span><div class="note editable" data-key="d2m1-desc">前往三軒茶屋，轉東急世田谷線搭「幸福の招き猫電車」；班次依官方當日運行。</div></div></div><div class="row"><b class="time editable" data-key="d2m2-t">09:00</b><div><span class="place editable" data-key="d2m2-c">宮之坂 → 豪德寺</span><div class="note editable" data-key="d2m2-desc">三軒茶屋站出發 → 宮之坂站，步行約 5 分鐘；豪德寺看招福貓児。</div></div></div><div class="row"><b class="time editable" data-key="d2m3-t">11:00</b><div><span class="place editable" data-key="d2m3-c">東京媽祖廟</span><div class="note editable" data-key="d2m3-desc">依時序移至上午。</div></div></div><div class="row"><b class="time editable" data-key="d2m4-t">12:30</b><div><span class="place editable" data-key="d2m4-c">午餐</span><div class="note editable" data-key="d2m4-desc">Tokyo Xiang-kou Fan-tuan Dian - Taiwan Onigiri；註記飯糰約 11:00–19:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m5-t">14:00</b><div><span class="place editable" data-key="d2m5-c">明治神宮外苑銀杏並木</span><div class="note editable" data-key="d2m5-desc">青山一丁目站 4 號出口可往銀杏大道；也可由外苑前站步行約 8 分鐘。</div></div></div><div class="row"><b class="time editable" data-key="d2m6-t">16:00–18:00</b><div><span class="place editable" data-key="d2m6-c">SHIBUYA SKY</span><div class="note editable" data-key="d2m6-desc">安排傍晚，目標白天、夕陽與夜景。</div></div></div><div class="row"><b class="time editable" data-key="d2m7-t">18:15</b><div><span class="place editable" data-key="d2m7-c">下北澤・APFR TOKYO</span><div class="note editable" data-key="d2m7-desc">APFR TOKYO；列直營店約 11:00–20:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m8-t">19:20</b><div><span class="place editable" data-key="d2m8-c">下北澤晚餐</span><div class="note editable" data-key="d2m8-desc">拉麵 藥膳食堂ちゃぶ膳；列約 17:00–21:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m9-t">20:30</b><div><span class="place editable" data-key="d2m9-c">Jazz &amp; Café Hayashi｜備選</span><div class="note editable" data-key="d2m9-desc">15:00–23:00；可去可不去。</div></div></div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<div class="body"><div class="timeline"><div class="row"><b class="time editable" data-key="d2m1-t">08:00</b><div><span class="place editable" data-key="d2m1-c">初台 → 三軒茶屋</span><div class="note editable" data-key="d2m1-desc">前往三軒茶屋，轉東急世田谷線搭「幸福の招き猫電車」；班次依官方當日運行。</div></div></div><div class="row"><b class="time editable" data-key="d2m2-t">09:00</b><div><span class="place editable" data-key="d2m2-c">宮之坂 → 豪德寺</span><div class="note editable" data-key="d2m2-desc">三軒茶屋站出發 → 宮之坂站，步行約 5 分鐘；豪德寺看招福貓児。</div></div></div><div class="row"><b class="time editable" data-key="d2m3-t">11:00</b><div><span class="place editable" data-key="d2m3-c">東京媽祖廟</span><div class="note editable" data-key="d2m3-desc">依時序移至上午。</div></div></div><div class="row"><b class="time editable" data-key="d2m4-t">12:30</b><div><span class="place editable" data-key="d2m4-c">午餐</span><div class="note editable" data-key="d2m4-desc">Tokyo Xiang-kou Fan-tuan Dian - Taiwan Onigiri；註記飯糰約 11:00–19:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m4b-t">13:20–14:25</b><div><span class="place editable" data-key="d2m4b-c">明治神宮｜購買「開運木鈴 こだま」</span><div class="note editable" data-key="d2m4b-desc">原宿站／明治神宮前站出發，從巨大鳥居走到本殿約 10–15 分鐘；在「夫婦楠」附近尋找授與所，向巫女或神職人員出示日文詢問木鈴。需預留原路步行返回車站的時間。</div></div></div><div class="row"><b class="time editable" data-key="d2m5-t">14:50–15:25</b><div><span class="place editable" data-key="d2m5-c">明治神宮外苑銀杏並木</span><div class="note editable" data-key="d2m5-desc">從明治神宮搭地鐵前往「神宮外苑銀杏並木」，青山一丁目站 4 號出口步行前往；為保留 16:00 SHIBUYA SKY，銀杏大道改為精簡散步拍照。</div></div></div><div class="row"><b class="time editable" data-key="d2m6-t">16:00–18:00</b><div><span class="place editable" data-key="d2m6-c">SHIBUYA SKY</span><div class="note editable" data-key="d2m6-desc">安排傍晚，目標白天、夕陽與夜景。</div></div></div><div class="row"><b class="time editable" data-key="d2m7-t">18:15</b><div><span class="place editable" data-key="d2m7-c">下北澤・APFR TOKYO</span><div class="note editable" data-key="d2m7-desc">APFR TOKYO；列直營店約 11:00–20:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m8-t">19:20</b><div><span class="place editable" data-key="d2m8-c">下北澤晚餐</span><div class="note editable" data-key="d2m8-desc">拉麵 藥膳食堂ちゃぶ膳；列約 17:00–21:00。</div></div></div><div class="row"><b class="time editable" data-key="d2m9-t">20:30</b><div><span class="place editable" data-key="d2m9-c">Jazz &amp; Café Hayashi｜備選</span><div class="note editable" data-key="d2m9-desc">15:00–23:00；可去可不去。</div></div></div></div><section class="kodama-section" aria-labelledby="d2-kodama-heading">
+<div class="kodama-head"><strong id="d2-kodama-heading">🎐 明治神宮｜開運木鈴 こだま</strong><span class="kodama-chip">現場購買小卡</span></div>
+<div class="kodama-steps"><b>前往方式：</b>JR 原宿站「西口」或東京 Metro「明治神宮前〈原宿〉站」2 號出口 → 從巨大鳥居沿南參道步行約 10–15 分鐘 → 本殿前大廣場，找到「夫婦楠」（兩棵相依的楠木）→ 留意廣場側邊／神樂殿附近的御守授與所（實際窗口請依現場指引）。</div>
+<div class="kodama-instruction">🗣️ 現場溝通小幫手｜將下面日文直接出示給巫女或神職人員</div>
+<div class="kodama-jp" lang="ja" id="d2-kodama-jp">すみません、こちらの「開運木鈴（こだま）」はありますか？</div>
+<div class="kodama-zh">不好意思，請問有這個「開運木鈴（Kodama）」嗎？</div>
+<div class="kodama-buttons"><button class="kodama-copy" type="button" data-copy-kodama>📋 複製日文</button><a target="_blank" rel="noopener" href="https://www.meijijingu.or.jp/sanpai/6.php">📷 官方木鈴照片</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=明治神宮">📍 明治神宮地圖</a></div>
+<div class="kodama-tip"><b>購買提醒：</b>這款木鈴未必會放在桌面展示，請直接出示文字或官方照片詢問；官網列有「開運木鈴 こだま」，但是否仍在販售、有無現貨以現場為準。11 月閉門時間 16:10，建議提早抵達。</div>
+</section><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
 <summary><span class="editable" data-key="d2-tr1-title">🚉 初台 → 三軒茶屋</span></summary>
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d2-tr1-tool">京王新線 → JR／地下鐵至澀谷 → 東急田園都市線</span></div>
@@ -535,17 +523,23 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div><b>流程：</b><span class="editable" data-key="d2-tr3-flow">由豪德寺／山下站一帶回到小田急豪德寺站 → 搭至新宿 → 轉 JR 中央・總武線至大久保一帶 → 步行至東京媽祖廟。</span></div>
 <div class="transport-tip editable" data-key="d2-tr3-tip">這段以大久保作為後續銜接點，方便直接接的銀杏交通。</div>
 </div></details><details class="transport-item">
-<summary><span class="editable" data-key="d2-tr4-title">🚉 東京媽祖廟／午餐 → 明治神宮外苑銀杏</span></summary>
+<summary><span class="editable" data-key="d2-tr4-title">🚉 東京媽祖廟／午餐（大久保）→ 明治神宮</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d2-tr4-tool">JR 中央・總武線 → 都營大江戶線</span></div>
-<div><b>流程：</b><span class="editable" data-key="d2-tr4-flow">大久保站搭中央・總武線到代代木 → 站內／出站依指標轉都營大江戶線 → 青山一丁目下車 → 4 號出口前往銀杏大道。</span></div>
-<div class="transport-tip editable" data-key="d2-tr4-tip">此段依交通寫法整併；若改從外苑前站進入，步行約 8 分鐘。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d2-tr4-tool">JR 中央・總武線 → JR 山手線＋步行</span></div>
+<div><b>流程：</b><span class="editable" data-key="d2-tr4-flow">從飯糰店步行至大久保站 → 搭 JR 中央・總武線至新宿 → 轉 JR 山手線（往澀谷方向）至原宿站 → 從西口往明治神宮「原宿口／南參道」大鳥居前進，步行約 10–15 分鐘到本殿。也可搭東京 Metro 至明治神宮前〈原宿〉站 2 號出口。</span></div>
+<div class="transport-tip editable" data-key="d2-tr4-tip">11 月明治神宮閉門時間為 16:10；建議在下午先處理木鈴購買。木鈴是否有貨請現場詢問。</div>
+</div></details><details class="transport-item">
+<summary><span class="editable" data-key="d2-tr4b-title">🚉 明治神宮（原宿）→ 明治神宮外苑銀杏並木</span></summary>
+<div class="transport-content">
+<div><b>搭乘：</b><span class="editable" data-key="d2-tr4b-tool">東京 Metro 千代田線 → 銀座線＋步行</span></div>
+<div><b>流程：</b><span class="editable" data-key="d2-tr4b-flow">從明治神宮南參道返回「明治神宮前〈原宿〉站」→ 搭千代田線至表參道站 → 轉銀座線到青山一丁目站 → 從 4 號出口步行至神宮外苑銀杏並木。</span></div>
+<div class="transport-tip editable" data-key="d2-tr4b-tip">⚠️ 明治神宮（買木鈴）與明治神宮外苑（看銀杏）是不同地點，不在同一個園區；須預留搭車與步行時間。若午餐排隊較久，以木鈴＋已訂時段的 SHIBUYA SKY 為優先，銀杏停留可縮短。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d2-tr5-title">🚉 明治神宮外苑 → SHIBUYA SKY</span></summary>
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d2-tr5-tool">東京 Metro 銀座線</span></div>
 <div><b>流程：</b><span class="editable" data-key="d2-tr5-flow">青山一丁目站搭銀座線直達澀谷 → 依「SHIBUYA SCRAMBLE SQUARE」指標前往 SHIBUYA SKY。</span></div>
-<div class="transport-tip editable" data-key="d2-tr5-tip">16:00 前需預留驗票、排隊與上樓時間。</div>
+<div class="transport-tip editable" data-key="d2-tr5-tip">15:25 左右離開銀杏並木，16:00 前需預留進入 SHIBUYA SKY 的驗票、排隊與上樓時間；若已訂固定入場時間請優先遵守。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d2-tr6-title">🚉 澀谷 → 下北澤 APFR → 晚餐</span></summary>
 <div class="transport-content">
@@ -685,18 +679,18 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="dayhead-main"><h3 class="editable" data-key="d4-title">Day 4｜11/15（日）｜東京 → 河口湖・湖畔</h3><div class="daymeta editable" data-key="d4-hotel">住宿：桐泊旅居《站前館》｜16:00 後入住・10:00 退房</div></div>
 <div class="day-right"><span class="tag">河口湖</span><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="row"><b class="time editable" data-key="d4m1-t">上午</b><div><span class="place editable" data-key="d4m1-c">初台 → 新宿</span><div class="note editable" data-key="d4m1-desc">退房後前往新宿，搭 Klook 預訂的富士回遊。</div></div></div><div class="row"><b class="time editable" data-key="d4m2-t">09:30–11:28</b><div><span class="place editable" data-key="d4m2-c">新宿 → 河口湖</span><div class="note editable" data-key="d4m2-desc">：富士回遊 11 號 09:30 新宿出發，11:28 抵達河口湖。</div></div></div><div class="row"><b class="time editable" data-key="d4m3-t">抵達後</b><div><span class="place editable" data-key="d4m3-c">桐泊旅居《站前館》</span><div class="note editable" data-key="d4m3-desc">先詢問住宿是否可寄放行李，再安排午餐。</div></div></div><div class="row"><b class="time editable" data-key="d4m4-t">午餐</b><div><span class="place editable" data-key="d4m4-c">Shaw's Sushi Bar &amp; Dining</span><div class="note editable" data-key="d4m4-desc">素食無麩質壽司碗套餐；註記要求去五辛。</div></div></div><div class="row"><b class="time editable" data-key="d4m5-t">下午</b><div><span class="place editable" data-key="d4m5-c">河口湖湖畔・全景纜車</span><div class="note editable" data-key="d4m5-desc">河口湖全景纜車；由河口湖站搭周遊巴士紅線，在「遊覽船・纜車入口站」下車，車程約 15 分鐘。</div></div></div><div class="row"><b class="time editable" data-key="d4m6-t">傍晚</b><div><span class="place editable" data-key="d4m6-c">河口湖北岸</span><div class="note editable" data-key="d4m6-desc">前往河口湖北岸拍逆富士；風小、湖面平靜時倒影較有機會。</div></div></div><div class="route editable" data-key="d4-rain">☔ 雨天備案｜御殿場 Premium Outlet 10:00–20:00。依為本日主要雨備。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
-<summary><span class="editable" data-key="d4-tr1-title">🚉 初台 → 新宿・富士回遊月台</span></summary>
+<div class="body"><div class="timeline"><div class="route editable" data-key="d4-train-ticket">🎫 11/15 去程｜富士回遊 11 號（FUJI EXCURSION 11）｜09:30 新宿・第 10 月台 → 11:28 河口湖｜1 小時 58 分鐘｜🚄 第 3 車廂・6A／6B</div><div class="row"><b class="time editable" data-key="d4m1-t">上午</b><div><span class="place editable" data-key="d4m1-c">初台 → 新宿</span><div class="note editable" data-key="d4m1-desc">退房後從初台搭京王新線前往新宿，搭乘 09:30 富士回遊 11 號；新宿站第 10 月台，建議提前到站。</div></div></div><div class="row"><b class="time editable" data-key="d4m2-t">09:30–11:28</b><div><span class="place editable" data-key="d4m2-c">🚄 富士回遊 11 號｜新宿 → 河口湖</span><div class="note editable" data-key="d4m2-desc">FUJI EXCURSION 11｜09:30 新宿第 10 月台出發 → 11:28 河口湖；車程 1 小時 58 分鐘。指定席：第 3 車廂 6A、6B（2 人）。</div></div></div><div class="row"><b class="time editable" data-key="d4m3-t">抵達後</b><div><span class="place editable" data-key="d4m3-c">桐泊旅居《站前館》</span><div class="note editable" data-key="d4m3-desc">先詢問住宿是否可寄放行李，再安排午餐。</div></div></div><div class="row"><b class="time editable" data-key="d4m4-t">午餐</b><div><span class="place editable" data-key="d4m4-c">Shaw's Sushi Bar &amp; Dining</span><div class="note editable" data-key="d4m4-desc">素食無麩質壽司碗套餐；註記要求去五辛。</div></div></div><div class="row"><b class="time editable" data-key="d4m5-t">下午</b><div><span class="place editable" data-key="d4m5-c">河口湖湖畔・全景纜車</span><div class="note editable" data-key="d4m5-desc">河口湖全景纜車；由河口湖站搭周遊巴士紅線，在「遊覽船・纜車入口站」下車，車程約 15 分鐘。</div></div></div><div class="row"><b class="time editable" data-key="d4m6-t">傍晚</b><div><span class="place editable" data-key="d4m6-c">河口湖北岸</span><div class="note editable" data-key="d4m6-desc">前往河口湖北岸拍逆富士；風小、湖面平靜時倒影較有機會。</div></div></div><div class="route editable" data-key="d4-rain">☔ 雨天備案｜御殿場 Premium Outlet 10:00–20:00。依為本日主要雨備。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<summary><span class="editable" data-key="d4-tr1-title">🚉 初台 → 新宿・富士回遊第 10 月台</span></summary>
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d4-tr1-tool">京王新線＋步行轉乘</span></div>
-<div><b>流程：</b><span class="editable" data-key="d4-tr1-flow">初台搭京王新線到新宿 → 依 JR／特急列車指標前往富士回遊乘車月台 → 先完成指定席／電子票確認。</span></div>
-<div class="transport-tip editable" data-key="d4-tr1-tip">新宿站轉乘路程長，建議比列車出發時間至少早 30 分鐘到站。</div>
+<div><b>流程：</b><span class="editable" data-key="d4-tr1-flow">初台搭京王新線到新宿 → 依 JR 線／特急「富士回遊（FUJI EXCURSION）」指標前往新宿站第 10 月台 → 確認富士回遊 11 號及第 3 車廂 → 入座 6A、6B。</span></div>
+<div class="transport-tip editable" data-key="d4-tr1-tip">09:30 發車，新宿站轉乘路程長，建議至少提早 30 分鐘到站；第 10 月台依提供的車票資訊，當天仍以站內顯示為準。</div>
 </div></details><details class="transport-item">
-<summary><span class="editable" data-key="d4-tr2-title">🚉 新宿 → 河口湖</span></summary>
+<summary><span class="editable" data-key="d4-tr2-title">🚄 新宿 → 河口湖｜富士回遊 11 號</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d4-tr2-tool">JR／富士急行 富士回遊</span></div>
-<div><b>流程：</b><span class="editable" data-key="d4-tr2-flow">搭 09:30 富士回遊 11 號 → 11:28 河口湖；原則上直達，不需要在大月自行換車。</span></div>
-<div class="transport-tip editable" data-key="d4-tr2-tip">班次與車次請以實際訂票憑證為準。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d4-tr2-tool">JR／富士急行直通特急「富士回遊 11 號」</span></div>
+<div><b>流程：</b><span class="editable" data-key="d4-tr2-flow">09:30 自新宿站第 10 月台搭乘 FUJI EXCURSION 11 → 11:28 抵達河口湖，約 1 小時 58 分鐘；直達，無須在大月自行換車。第 3 車廂，座位 6A、6B。</span></div>
+<div class="transport-tip editable" data-key="d4-tr2-tip">車次、座位依所附車票確認。月台可能臨時調整，搭車前請確認車站電子看板。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d4-tr3-title">🚉 河口湖站 → 住宿寄放行李 → 午餐</span></summary>
 <div class="transport-content">
@@ -833,7 +827,7 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="dayhead-main"><h3 class="editable" data-key="d6-title">Day 6｜11/17（二）｜河口湖 → 池袋・新宿購物</h3><div class="daymeta editable" data-key="d6-hotel">住宿：京王布萊索飯店・池袋</div></div>
 <div class="day-right"><span class="tag">購物</span><button aria-expanded="false" class="toy-toggle" type="button">🧸 玩具行程 <span class="toy-symbol">＋</span></button><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="row"><b class="time editable" data-key="d6m1-t">早餐</b><div><span class="place editable" data-key="d6m1-c">enico.cafe&amp;bar Kawaguchiko</span><div class="note editable" data-key="d6m1-desc">法式吐司。</div></div></div><div class="row"><b class="time editable" data-key="d6m2-t">09:00</b><div><span class="place editable" data-key="d6m2-c">退房／寄放行李</span><div class="note editable" data-key="d6m2-desc">10:00 前退房並寄放行李。</div></div></div><div class="row"><b class="time editable" data-key="d6m3-t">09:30</b><div><span class="place editable" data-key="d6m3-c">大石公園</span><div class="note editable" data-key="d6m3-desc">從河口湖站搭周遊巴士紅線，約 25～30 分鐘，終點「河口湖自然生活館」下車。</div></div></div><div class="row"><b class="time editable" data-key="d6m4-t">午餐</b><div><span class="place editable" data-key="d6m4-c">古民家 中村</span><div class="note editable" data-key="d6m4-desc">古民家 中村｜日式純素套餐，註記 10:00 可先預訂；備案：紅葉亭。</div></div></div><div class="row"><b class="time editable" data-key="d6m5-t">15:39–17:45</b><div><span class="place editable" data-key="d6m5-c">河口湖 → 新宿</span><div class="note editable" data-key="d6m5-desc">河口湖 → 新宿 94 號 15:39 出發，17:45 抵達。</div></div></div><div class="row"><b class="time editable" data-key="d6m6-t">抵達後</b><div><span class="place editable" data-key="d6m6-c">新宿 → 池袋・辦理入住</span><div class="note editable" data-key="d6m6-desc">前往池袋京王布萊索飯店；飯店 15:00 後可入住，本日實際入住依抵達時間。</div></div></div><div class="row"><b class="time editable" data-key="d6m7-t">傍晚</b><div><span class="place editable" data-key="d6m7-c">新宿</span><div class="note editable" data-key="d6m7-desc">On・HOKA・SHIRO 重點購物。</div></div></div><div class="row"><b class="time editable" data-key="d6m8-t">19:00–20:30</b><div><span class="place editable" data-key="d6m8-c">池袋</span><div class="note editable" data-key="d6m8-desc">3COINS・MUJI。</div></div></div><div class="route editable" data-key="d6-note">紀念品：湖邊、河口湖站前與站內皆可購買，品項大同小異；不用為了同類商品多繞一趟。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<div class="body"><div class="timeline"><div class="route editable" data-key="d6-train-ticket">🎫 11/17 回程｜富士回遊 94 號（FUJI EXCURSION 94）｜15:39 河口湖 → 17:45 新宿・抵達第 11 月台｜2 小時 6 分鐘｜🚄 第 4 車廂・1A／1B</div><div class="row"><b class="time editable" data-key="d6m1-t">早餐</b><div><span class="place editable" data-key="d6m1-c">enico.cafe&amp;bar Kawaguchiko</span><div class="note editable" data-key="d6m1-desc">法式吐司。</div></div></div><div class="row"><b class="time editable" data-key="d6m2-t">09:00</b><div><span class="place editable" data-key="d6m2-c">退房／寄放行李</span><div class="note editable" data-key="d6m2-desc">10:00 前退房並寄放行李。</div></div></div><div class="row"><b class="time editable" data-key="d6m3-t">09:30</b><div><span class="place editable" data-key="d6m3-c">大石公園</span><div class="note editable" data-key="d6m3-desc">從河口湖站搭周遊巴士紅線，約 25～30 分鐘，終點「河口湖自然生活館」下車。</div></div></div><div class="row"><b class="time editable" data-key="d6m4-t">午餐</b><div><span class="place editable" data-key="d6m4-c">古民家 中村</span><div class="note editable" data-key="d6m4-desc">古民家 中村｜日式純素套餐，註記 10:00 可先預訂；備案：紅葉亭。</div></div></div><div class="row"><b class="time editable" data-key="d6m5-t">15:39–17:45</b><div><span class="place editable" data-key="d6m5-c">🚄 富士回遊 94 號｜河口湖 → 新宿</span><div class="note editable" data-key="d6m5-desc">FUJI EXCURSION 94｜15:39 河口湖出發 → 17:45 新宿（抵達第 11 月台）；車程 2 小時 6 分鐘。指定席：第 4 車廂 1A、1B（2 人）。</div></div></div><div class="row"><b class="time editable" data-key="d6m6-t">抵達後</b><div><span class="place editable" data-key="d6m6-c">新宿 → 池袋・辦理入住</span><div class="note editable" data-key="d6m6-desc">前往池袋京王布萊索飯店；飯店 15:00 後可入住，本日實際入住依抵達時間。</div></div></div><div class="row"><b class="time editable" data-key="d6m7-t">傍晚</b><div><span class="place editable" data-key="d6m7-c">新宿</span><div class="note editable" data-key="d6m7-desc">On・HOKA・SHIRO 重點購物。</div></div></div><div class="row"><b class="time editable" data-key="d6m8-t">19:00–20:30</b><div><span class="place editable" data-key="d6m8-c">池袋</span><div class="note editable" data-key="d6m8-desc">3COINS・MUJI。</div></div></div><div class="route editable" data-key="d6-note">紀念品：湖邊、河口湖站前與站內皆可購買，品項大同小異；不用為了同類商品多繞一趟。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
 <summary><span class="editable" data-key="d6-tr1-title">🚉 住宿 → 河口湖站 → 大石公園</span></summary>
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d6-tr1-tool">步行／短程移動 → 周遊巴士紅線</span></div>
@@ -844,13 +838,13 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d6-tr2-tool">紅線巴士／計程車＋步行</span></div>
 <div><b>流程：</b><span class="editable" data-key="d6-tr2-flow">大石公園搭紅線往河口湖站方向返回 → 依古民家中村實際位置轉步行或短程計程車 → 用餐後回河口湖站取行李。</span></div>
-<div class="transport-tip editable" data-key="d6-tr2-tip">餐廳位置與預約時間請先確認，避免錯過 15:39 巴士。</div>
+<div class="transport-tip editable" data-key="d6-tr2-tip">餐廳位置與預約時間請先確認，避免錯過 15:39 富士回遊 94 號列車。</div>
 </div></details><details class="transport-item">
-<summary><span class="editable" data-key="d6-tr3-title">🚉 河口湖 → 新宿</span></summary>
+<summary><span class="editable" data-key="d6-tr3-title">🚄 河口湖 → 新宿｜富士回遊 94 號</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d6-tr3-tool">高速巴士 94 號</span></div>
-<div><b>流程：</b><span class="editable" data-key="d6-tr3-flow">河口湖站先取行李並確認乘車月台 → 搭 94 號 15:39 出發 → 約 17:45 抵新宿。</span></div>
-<div class="transport-tip editable" data-key="d6-tr3-tip">巴士需提早到月台，行李依現場規定放行李艙。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d6-tr3-tool">JR／富士急行直通特急「富士回遊 94 號」</span></div>
+<div><b>流程：</b><span class="editable" data-key="d6-tr3-flow">河口湖站取回行李並前往富士回遊列車搭乘處 → 15:39 搭 FUJI EXCURSION 94 出發 → 17:45 抵達新宿站第 11 月台。第 4 車廂，座位 1A、1B（2 人），車程約 2 小時 6 分鐘。</span></div>
+<div class="transport-tip editable" data-key="d6-tr3-tip">這段是富士回遊特急列車，不是高速巴士。所附車票的第 11 月台為新宿抵達月台；河口湖出發月台請以現場顯示為準。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d6-tr4-title">🚉 新宿 → 池袋・飯店</span></summary>
 <div class="transport-content">
@@ -879,7 +873,7 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <summary>午餐｜古民家 中村</summary>
 <div class="meal-content">
 <div><b>建議時段：</b>12:00～13:30</div>
-<div><b>適合原因：</b>大石公園回程、搭 15:39 巴士前安排午餐，日式純素套餐。</div>
+<div><b>適合原因：</b>大石公園回程、搭 15:39 富士回遊列車前安排午餐，日式純素套餐。</div>
 <div><b>素食重點：</b>目前這次網路查核沒有取得足夠可靠的官方菜單資訊，因此請務必事前預約並再次確認純素套餐與營業日。</div>
 <div class="meal-fit">若預約不到，改 PLANT NATION 比較穩。</div>
 <div class="meal-actions"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=古民家+中村+河口湖">📍 地圖</a></div>
@@ -889,7 +883,7 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <summary>午餐備案｜PLANT NATION - vegan kitchen -</summary>
 <div class="meal-content">
 <div><b>建議時段：</b>12:00～14:00</div>
-<div><b>適合原因：</b>靠近河口湖站／船津區，吃完較容易回站拿行李搭 15:39 巴士。</div>
+<div><b>適合原因：</b>靠近河口湖站／船津區，吃完較容易回站拿行李搭 15:39 富士回遊列車。</div>
 <div><b>素食重點：</b>vegan kitchen，對奶蛋素最容易處理。</div>
 <div class="meal-fit">若 Day 5 已經吃過，可改成簡單咖啡餐或原備案紅葉亭。</div>
 <div class="meal-actions"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=PLANT+NATION+vegan+kitchen+Kawaguchiko">📍 地圖</a></div>
@@ -914,12 +908,12 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="dayhead-main"><h3 class="editable" data-key="d7-title">Day 7｜11/18（三）｜輕井澤・秋色散步</h3><div class="daymeta editable" data-key="d7-hotel">住宿：京王布萊索飯店・池袋｜新幹線＋單車／巴士</div></div>
 <div class="day-right"><span class="tag">單車</span><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="route editable" data-key="d7-route">主線依：池袋 → 大宮轉北陸新幹線 → 輕井澤 → 租單車 → 雲場池 → 舊輕井澤銀座／聖保羅天主教堂 → 午餐 → 西武觀光巴士 → Harunire Terrace → 湯川沿岸 → 高原教會／石之教會 → Prince Shopping Plaza → 大宮 → 池袋。</div><div class="row"><b class="time editable" data-key="d7m1-t">08:15 左右</b><div><span class="place editable" data-key="d7m1-c">池袋 → 大宮 → 輕井澤</span><div class="note editable" data-key="d7m1-desc">從池袋搭 JR 埼京線或湘南新宿線往大宮；大宮站內轉 JR 北陸新幹線直達輕井澤。</div></div></div><div class="row"><b class="time editable" data-key="d7m2-t">早餐</b><div><span class="place editable" data-key="d7m2-c">早餐＋租腳踏車</span><div class="note editable" data-key="d7m2-desc">珈琲館旦念亭；輕井澤站北口周邊可找租車行（例：白貓自行車）。</div></div></div><div class="row"><b class="time editable" data-key="d7m3-t">09:30</b><div><span class="place editable" data-key="d7m3-c">雲場池</span><div class="note editable" data-key="d7m3-desc">秋色散步；提醒查看即時攝影機確認紅葉狀況。</div></div></div><div class="row"><b class="time editable" data-key="d7m4-t">10:45</b><div><span class="place editable" data-key="d7m4-c">舊輕井澤銀座通</span><div class="note editable" data-key="d7m4-desc">老街 → 聖保羅天主教堂；此處註記「還腳踏車」。</div></div></div><div class="row"><b class="time editable" data-key="d7m5-t">午餐</b><div><span class="place editable" data-key="d7m5-c">午餐</span><div class="note editable" data-key="d7m5-desc">Atelier de Fromage Pizzeria｜輕井澤瑪格麗特。</div></div></div><div class="row"><b class="time editable" data-key="d7m6-t">13:30</b><div><span class="place editable" data-key="d7m6-c">Harunire Terrace</span><div class="note editable" data-key="d7m6-desc">榆樹街小鎮／村民食堂。</div></div></div><div class="row"><b class="time editable" data-key="d7m7-t">14:45–15:15</b><div><span class="place editable" data-key="d7m7-c">湯川沿岸</span><div class="note editable" data-key="d7m7-desc">沿溪散步。</div></div></div><div class="row"><b class="time editable" data-key="d7m8-t">15:15–15:30</b><div><span class="place editable" data-key="d7m8-c">輕井澤高原教會／石之教會</span><div class="note editable" data-key="d7m8-desc">二選一。</div></div></div><div class="row"><b class="time editable" data-key="d7m9-t">15:30 後</b><div><span class="place editable" data-key="d7m9-c">Prince Shopping Plaza</span><div class="note editable" data-key="d7m9-desc">返回輕井澤站南口，逛 Prince Shopping Plaza。</div></div></div><div class="route editable" data-key="d7-return">回程參考：輕井澤 → 大宮｜ASAMA626 16:56→17:47；ASAMA628 17:41→18:27。實際以訂票日班表為準。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
-<summary><span class="editable" data-key="d7-tr1-title">🚉 池袋 → 大宮 → 輕井澤</span></summary>
+<div class="body"><div class="timeline"><div class="route editable" data-key="d7-route">主線：池袋 → 大宮（轉北陸新幹線 Hakutaka 555，09:06 發）→ 09:43 輕井澤（抵達月台 3、4）→ 早餐／租單車 → 雲場池 → 舊輕井澤銀座／聖保羅天主教堂 → 午餐 → 西武觀光巴士 → Harunire Terrace → 湯川沿岸 → 高原教會／石之教會 → Prince Shopping Plaza → 17:41 搭 Asama 628 返回大宮（18:27 抵達）→ 池袋。</div><div class="row"><b class="time editable" data-key="d7m1-t">08:15 左右</b><div><span class="place editable" data-key="d7m1-c">池袋 → 大宮（轉乘新幹線）</span><div class="note editable" data-key="d7m1-desc">從池袋搭 JR 埼京線或湘南新宿線前往大宮；09:06 新幹線發車，請預留大宮站內轉乘與找月台時間。</div></div></div><div class="row"><b class="time editable" data-key="d7m1a-t">09:06–09:43</b><div><span class="place editable" data-key="d7m1a-c">🚄 Hakutaka 555｜大宮（埼玉）→ 輕井澤</span><div class="note editable" data-key="d7m1a-desc">北陸新幹線，車程約 37 分鐘；09:43 抵達輕井澤站第 3、4 月台。去程座位號碼未見於提供的車票截圖，請以正式車票為準；月台依站內顯示確認。</div></div></div><div class="row"><b class="time editable" data-key="d7m2-t">09:43 抵達後</b><div><span class="place editable" data-key="d7m2-c">早餐＋租腳踏車</span><div class="note editable" data-key="d7m2-desc">輕井澤站北口周邊可找租車行（例：白貓自行車）；早餐可安排珈琲館旦念亭，時間依實際用餐與租車情況調整。</div></div></div><div class="row"><b class="time editable" data-key="d7m3-t">10:30 左右</b><div><span class="place editable" data-key="d7m3-c">雲場池</span><div class="note editable" data-key="d7m3-desc">秋色散步；提醒查看即時攝影機確認紅葉狀況。</div></div></div><div class="row"><b class="time editable" data-key="d7m4-t">11:30 左右</b><div><span class="place editable" data-key="d7m4-c">舊輕井澤銀座通</span><div class="note editable" data-key="d7m4-desc">老街 → 聖保羅天主教堂；此處註記「還腳踏車」。</div></div></div><div class="row"><b class="time editable" data-key="d7m5-t">午餐</b><div><span class="place editable" data-key="d7m5-c">午餐</span><div class="note editable" data-key="d7m5-desc">Atelier de Fromage Pizzeria｜輕井澤瑪格麗特。</div></div></div><div class="row"><b class="time editable" data-key="d7m6-t">13:30</b><div><span class="place editable" data-key="d7m6-c">Harunire Terrace</span><div class="note editable" data-key="d7m6-desc">榆樹街小鎮／村民食堂。</div></div></div><div class="row"><b class="time editable" data-key="d7m7-t">14:45–15:15</b><div><span class="place editable" data-key="d7m7-c">湯川沿岸</span><div class="note editable" data-key="d7m7-desc">沿溪散步。</div></div></div><div class="row"><b class="time editable" data-key="d7m8-t">15:15–15:30</b><div><span class="place editable" data-key="d7m8-c">輕井澤高原教會／石之教會</span><div class="note editable" data-key="d7m8-desc">二選一。</div></div></div><div class="row"><b class="time editable" data-key="d7m9-t">15:30 後</b><div><span class="place editable" data-key="d7m9-c">Prince Shopping Plaza</span><div class="note editable" data-key="d7m9-desc">返回輕井澤站南口，逛 Prince Shopping Plaza；請在 17:41 發車前留足返回車站、進站與找月台的時間。</div></div></div><div class="row"><b class="time editable" data-key="d7m10-t">17:41–18:27</b><div><span class="place editable" data-key="d7m10-c">🚄 Asama 628｜輕井澤 → 大宮（埼玉）</span><div class="note editable" data-key="d7m10-desc">輕井澤站第 1、2 月台出發；指定座位：6 號車廂 11A、11B（2 人）。北陸新幹線車程約 46 分鐘，18:27 抵達大宮後轉乘 JR 返回池袋。</div></div></div><div class="route editable" data-key="d7-return">🚄 11/18 回程：Asama 628｜17:41 輕井澤（第 1、2 月台）→ 18:27 大宮（埼玉）｜車程約 46 分鐘｜🎫 6 號車廂・11A／11B；抵達後轉乘 JR 返回池袋。</div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<summary><span class="editable" data-key="d7-tr1-title">🚉 池袋 → 大宮 → 輕井澤｜Hakutaka 555</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d7-tr1-tool">JR 埼京線／湘南新宿線 → JR 北陸新幹線</span></div>
-<div><b>流程：</b><span class="editable" data-key="d7-tr1-flow">池袋搭 JR 往大宮 → 大宮站內不出站，依「新幹線」指標轉北陸新幹線 → 輕井澤站。</span></div>
-<div class="transport-tip editable" data-key="d7-tr1-tip">估池袋→大宮約 25 分、大宮→輕井澤約 40～45 分；參考 Hakutaka553／555，實際班次請另確認。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d7-tr1-tool">JR 埼京線／湘南新宿線 → 北陸新幹線 Hakutaka 555</span></div>
+<div><b>流程：</b><span class="editable" data-key="d7-tr1-flow">池袋搭 JR 前往大宮 → 大宮站內依「新幹線」指標轉乘 Hakutaka 555（09:06 發車）→ 09:43 抵達輕井澤，抵達月台為第 3、4 月台。</span></div>
+<div class="transport-tip editable" data-key="d7-tr1-tip">大宮 09:06 → 輕井澤 09:43，車程約 37 分鐘。池袋 → 大宮約需 25～35 分鐘（依班次），請額外預留轉乘緩衝；第 3、4 月台指的是輕井澤抵達月台。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d7-tr2-title">🚉 輕井澤站 → 雲場池 → 舊輕井澤</span></summary>
 <div class="transport-content">
@@ -945,11 +939,11 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div><b>流程：</b><span class="editable" data-key="d7-tr5-flow">星野區搭回輕井澤站方向巴士 → 輕井澤站下車 → 穿站到南口 → 步行進 Prince Shopping Plaza。</span></div>
 <div class="transport-tip editable" data-key="d7-tr5-tip">若巴士候車時間過長，可考慮計程車直回車站。</div>
 </div></details><details class="transport-item">
-<summary><span class="editable" data-key="d7-tr6-title">🚉 輕井澤 → 大宮 → 池袋</span></summary>
+<summary><span class="editable" data-key="d7-tr6-title">🚉 輕井澤 → 大宮 → 池袋｜Asama 628</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d7-tr6-tool">JR 北陸新幹線 → JR 埼京線／湘南新宿線</span></div>
-<div><b>流程：</b><span class="editable" data-key="d7-tr6-flow">輕井澤搭新幹線到大宮 → 站內轉 JR 回池袋。</span></div>
-<div class="transport-tip editable" data-key="d7-tr6-tip">提供 ASAMA626／628 參考；購票時以 2026/11/18 實際時刻為準。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d7-tr6-tool">北陸新幹線 Asama 628 → JR 埼京線／湘南新宿線</span></div>
+<div><b>流程：</b><span class="editable" data-key="d7-tr6-flow">輕井澤站第 1、2 月台搭乘 Asama 628（17:41 出發）→ 18:27 抵達大宮（埼玉）→ 站內轉乘 JR 回池袋。</span></div>
+<div class="transport-tip editable" data-key="d7-tr6-tip">輕井澤 17:41 → 大宮 18:27，車程約 46 分鐘。座位：6 號車廂，11A、11B。請提前從 Prince Shopping Plaza 返回車站；第 1、2 月台為輕井澤出發月台。</div>
 </div></details></section><section class="meal-section">
 <div class="meal-head"><span>🍽 每日的用餐點建議</span><small>輕井澤秋色日</small></div>
 <details class="meal-item">
@@ -1305,18 +1299,18 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 <div class="dayhead-main"><h3 class="editable" data-key="d12-title">Day 12｜11/23（一）｜成田山 → 成田機場</h3><div class="daymeta editable" data-key="d12-hotel">CI101 東京 14:35 → 台北 17:45</div></div>
 <div class="day-right"><span class="tag">返台</span><span class="chev">⌄</span></div>
 </div>
-<div class="body"><div class="timeline"><div class="row"><b class="time editable" data-key="d12m1-t">06:30</b><div><span class="editable" data-key="d12m1-c">起床、早餐。</span></div></div><div class="row"><b class="time editable" data-key="d12m2-t">07:30</b><div><span class="place editable" data-key="d12m2-c">池袋退房</span><div class="note editable" data-key="d12m2-desc">退房；若 CI101 確認為 NRT，先前往成田機場 T2 放行李。</div></div></div><div class="row"><b class="time editable" data-key="d12m3-t">07:30 後</b><div><span class="place editable" data-key="d12m3-c">池袋 → 成田機場 T2</span><div class="note editable" data-key="d12m3-desc">池袋 → 日暮里 → 京成 Skyliner → 成田機場 T2；先處理／寄放大件行李。</div></div></div><div class="row"><b class="time editable" data-key="d12m4-t">09:00–10:30</b><div><span class="place editable" data-key="d12m4-c">成田山新勝寺＋成田山公園</span><div class="note editable" data-key="d12m4-desc">從機場到 JR 成田站／京成成田站一帶，步行前往成田山新勝寺＋成田山公園。</div></div></div><div class="row"><b class="time editable" data-key="d12m5-t">11:00</b><div><span class="place editable" data-key="d12m5-c">成田 → 機場</span><div class="note editable" data-key="d12m5-desc">成田市區 → 成田機場，回 T2 取行李。</div></div></div><div class="row"><b class="time editable" data-key="d12m6-t">12:00</b><div><span class="place editable" data-key="d12m6-c">成田機場</span><div class="note editable" data-key="d12m6-desc">辦理登機／安檢。</div></div></div><div class="row"><b class="time editable" data-key="d12m7-t">14:35–17:45</b><div><span class="place editable" data-key="d12m7-c">CI101</span><div class="note editable" data-key="d12m7-desc">中華航空 CI101 東京 → 台北。</div></div></div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
+<div class="body"><div class="timeline"><div class="route editable" data-key="d12-skyliner-voucher">🎟 已購票｜京成 Skyliner 單程（上野／日暮里出發）｜成人 2 位｜彈性日期・班次／座位於兌票時選定；建議日暮里上車，時刻依當日行程安排。</div><div class="row"><b class="time editable" data-key="d12m1-t">06:30</b><div><span class="editable" data-key="d12m1-c">起床、早餐。</span></div></div><div class="row"><b class="time editable" data-key="d12m2-t">07:30</b><div><span class="place editable" data-key="d12m2-c">池袋退房</span><div class="note editable" data-key="d12m2-desc">池袋退房後，依當日自行選擇的 Skyliner 班次搭 JR 到日暮里，接著前往成田機場 T2 處理／寄放行李。</div></div></div><div class="row"><b class="time editable" data-key="d12m3-t">退房後（班次自選）</b><div><span class="place editable" data-key="d12m3-c">池袋 → 日暮里 → Skyliner → 成田機場 T2</span><div class="note editable" data-key="d12m3-desc">使用已購 Skyliner 單程票（上野／日暮里出發、成人 2 位、彈性日期）。建議由日暮里搭乘，依當日行程兌票選定列車班次及指定席，抵達成田機場 T2 後先處理／寄放行李；沒有預先固定發車時間。</div></div></div><div class="row"><b class="time editable" data-key="d12m4-t">09:00–10:30</b><div><span class="place editable" data-key="d12m4-c">成田山新勝寺＋成田山公園</span><div class="note editable" data-key="d12m4-desc">從機場到 JR 成田站／京成成田站一帶，步行前往成田山新勝寺＋成田山公園。</div></div></div><div class="row"><b class="time editable" data-key="d12m5-t">11:00</b><div><span class="place editable" data-key="d12m5-c">成田 → 機場</span><div class="note editable" data-key="d12m5-desc">成田市區 → 成田機場，回 T2 取行李。</div></div></div><div class="row"><b class="time editable" data-key="d12m6-t">12:00</b><div><span class="place editable" data-key="d12m6-c">成田機場</span><div class="note editable" data-key="d12m6-desc">辦理登機／安檢。</div></div></div><div class="row"><b class="time editable" data-key="d12m7-t">14:35–17:45</b><div><span class="place editable" data-key="d12m7-c">CI101</span><div class="note editable" data-key="d12m7-desc">中華航空 CI101 東京 → 台北。</div></div></div></div><section class="transport-section"><div class="transport-head"><span>🧭 點到點交通建議</span><small>點一下展開／收合</small></div><details class="transport-item">
 <summary><span class="editable" data-key="d12-tr1-title">🚉 池袋 → 日暮里</span></summary>
 <div class="transport-content">
 <div><b>搭乘：</b><span class="editable" data-key="d12-tr1-tool">JR 山手線</span></div>
-<div><b>流程：</b><span class="editable" data-key="d12-tr1-flow">池袋站搭 JR 山手線往日暮里方向 → 日暮里下車 → 依「京成線／Skyliner」指標轉乘。</span></div>
+<div><b>流程：</b><span class="editable" data-key="d12-tr1-flow">池袋站搭 JR 山手線到日暮里 → 依「京成線／Skyliner」指標轉往京成站，持已購的 Skyliner 電子憑證準備兌換指定席車票；JR 車資另外支付。</span></div>
 <div class="transport-tip editable" data-key="d12-tr1-tip">帶大行李時請走電梯路線，不要搶短轉乘。</div>
 </div></details><details class="transport-item">
-<summary><span class="editable" data-key="d12-tr2-title">🚉 日暮里 → 成田機場 T2</span></summary>
+<summary><span class="editable" data-key="d12-tr2-title">🚉 日暮里 → 成田機場 T2（已購 Skyliner，班次自選）</span></summary>
 <div class="transport-content">
-<div><b>搭乘：</b><span class="editable" data-key="d12-tr2-tool">京成 Skyliner</span></div>
-<div><b>流程：</b><span class="editable" data-key="d12-tr2-flow">日暮里搭 Skyliner → 成田機場第 2 航廈站下車 → 先到 T2 處理／寄放行李。</span></div>
-<div class="transport-tip editable" data-key="d12-tr2-tip">要求先到機場 T2 放行李，再回成田市區；若航空公司不可提早托運，就改用機場寄物櫃／行李寄存。</div>
+<div><b>搭乘：</b><span class="editable" data-key="d12-tr2-tool">已購 京成 Skyliner 單程票（上野／日暮里出發、成人 2 位）</span></div>
+<div><b>流程：</b><span class="editable" data-key="d12-tr2-flow">日暮里站 → 依 Skyliner 憑證使用規則辦理兌票，選定當日合適班次及指定席 → 搭 Skyliner 到空港第2ビル站（成田機場 T2）→ 至航廈辦理行李寄放／後續行程。此票為彈性日期，須於憑證有效期內使用，未預訂固定出發時刻。</span></div>
+<div class="transport-tip editable" data-key="d12-tr2-tip">🎫 已購票：Skyliner 京成電鐵車票｜單程票（上野／日暮里出發）｜2 位成人｜彈性日期。全車指定席，兌票後確認車次及座位。若仍要先去成田山，須預留機場寄物及成田市區往返時間；當日若時間不足，以趕上 CI101 報到為優先。</div>
 </div></details><details class="transport-item">
 <summary><span class="editable" data-key="d12-tr3-title">🚉 成田機場 T2 → 京成成田／JR 成田 → 成田山</span></summary>
 <div class="transport-content">
@@ -1383,17 +1377,20 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 (() => {
   const TEXT_KEY = "tokyo12_text_v8_meals";
   const CHECK_KEY = "tokyo12_checks_v8_meals";
+  const D2_KODAMA_REVISION_KEY = "tokyo12_day2_kodama_1113_v1";
+  const D2_KODAMA_REVISION_KEYS = ["d2-title", "d2m5-t", "d2m5-desc", "d2-tr4-title", "d2-tr4-tool", "d2-tr4-flow", "d2-tr4-tip", "d2-tr5-tip"];
+  const TRAIN_REVISION_KEY = "tokyo12_day7_train_revision_v1";
+  const TRAIN_REVISION_KEYS = ["d7-route", "d7m1-t", "d7m1-c", "d7m1-desc", "d7m2-t", "d7m2-desc", "d7m3-t", "d7m4-t", "d7m9-desc", "d7-return", "d7-tr1-title", "d7-tr1-tool", "d7-tr1-flow", "d7-tr1-tip", "d7-tr6-title", "d7-tr6-tool", "d7-tr6-flow", "d7-tr6-tip", "d7m1a-t", "d7m1a-c", "d7m1a-desc", "d7m10-t", "d7m10-c", "d7m10-desc"];
+  const FUJI_TRAIN_REVISION_KEY = "tokyo12_fuji_train_tickets_1115_1117_v1";
+  const FUJI_TRAIN_REVISION_KEYS = ["d4m1-desc", "d4m2-c", "d4m2-desc", "d4-tr1-title", "d4-tr1-flow", "d4-tr1-tip", "d4-tr2-title", "d4-tr2-tool", "d4-tr2-flow", "d4-tr2-tip", "d6m5-c", "d6m5-desc", "d6-tr2-tip", "d6-tr3-title", "d6-tr3-tool", "d6-tr3-flow", "d6-tr3-tip"];
+  const SKYLINER_REVISION_KEY = "tokyo12_skyliner_vouchers_day1_day12_v1";
+  const SKYLINER_REVISION_KEYS = ["d1-route", "d1m2-c", "d1-tr1-title", "d1-tr1-tool", "d1-tr1-flow", "d1-tr1-tip", "d12m2-desc", "d12m3-t", "d12m3-c", "d12m3-desc", "d12-tr1-flow", "d12-tr2-title", "d12-tr2-tool", "d12-tr2-flow", "d12-tr2-tip"];
   const days = [...document.querySelectorAll(".day")];
-  const editBtn = document.getElementById("edit");
-  const saveBtn = document.getElementById("save");
-  const exportBtn = document.getElementById("export");
-  let editing = false;
 
   // 展開／收合
   days.forEach(day => {
     day.querySelector(".dayhead").addEventListener("click", (e) => {
       if (e.target.closest(".toy-toggle")) return;
-      if (editing && e.target.closest('[contenteditable="true"]')) return;
       const isOpen = day.classList.toggle("open");
       if (!isOpen) {
         const panel = day.querySelector(".toy-panel");
@@ -1466,9 +1463,52 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
 
   // 載入文字修改
   const savedText = JSON.parse(localStorage.getItem(TEXT_KEY) || "{}");
+  if (localStorage.getItem(D2_KODAMA_REVISION_KEY) !== "2026-11-13-kodama-added") {
+    D2_KODAMA_REVISION_KEYS.forEach(key => delete savedText[key]);
+    localStorage.setItem(TEXT_KEY, JSON.stringify(savedText));
+    localStorage.setItem(D2_KODAMA_REVISION_KEY, "2026-11-13-kodama-added");
+  }
+  if (localStorage.getItem(TRAIN_REVISION_KEY) !== "2026-11-18-trains-confirmed") {
+    TRAIN_REVISION_KEYS.forEach(key => delete savedText[key]);
+    localStorage.setItem(TEXT_KEY, JSON.stringify(savedText));
+    localStorage.setItem(TRAIN_REVISION_KEY, "2026-11-18-trains-confirmed");
+  }
+  // 更新訂票資訊時，只移除相關舊的本機編輯快取；其餘日期的筆記保留。
+  if (localStorage.getItem(FUJI_TRAIN_REVISION_KEY) !== "2026-11-15-and-17-confirmed") {
+    FUJI_TRAIN_REVISION_KEYS.forEach(key => delete savedText[key]);
+    localStorage.setItem(TEXT_KEY, JSON.stringify(savedText));
+    localStorage.setItem(FUJI_TRAIN_REVISION_KEY, "2026-11-15-and-17-confirmed");
+  }
+  if (localStorage.getItem(SKYLINER_REVISION_KEY) !== "2026-11-12-and-23-vouchers-confirmed") {
+    SKYLINER_REVISION_KEYS.forEach(key => delete savedText[key]);
+    localStorage.setItem(TEXT_KEY, JSON.stringify(savedText));
+    localStorage.setItem(SKYLINER_REVISION_KEY, "2026-11-12-and-23-vouchers-confirmed");
+  }
   document.querySelectorAll(".editable[data-key]").forEach(el => {
     const k = el.dataset.key;
     if (Object.prototype.hasOwnProperty.call(savedText, k)) el.innerText = savedText[k];
+  });
+
+  // 開運木鈴的日文小卡：可直接放大出示，也能在 HTTPS 網頁複製。
+  const kodamaCopyBtn = document.querySelector("[data-copy-kodama]");
+  kodamaCopyBtn?.addEventListener("click", async (e) => {
+    e.stopPropagation();
+    const phrase = document.getElementById("d2-kodama-jp")?.textContent?.trim() || "";
+    if (!phrase) return;
+    try {
+      await navigator.clipboard.writeText(phrase);
+      kodamaCopyBtn.textContent = "✅ 已複製日文";
+    } catch (err) {
+      const node = document.getElementById("d2-kodama-jp");
+      if (node && window.getSelection) {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+      kodamaCopyBtn.textContent = "請長按選取並複製";
+    }
   });
 
   // 待辦狀態
@@ -1483,56 +1523,6 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:12px}
     });
   });
 
-  // 編輯模式
-  function setEditing(on){
-    editing = on;
-    document.body.classList.toggle("editing", on);
-    editBtn.classList.toggle("edit-on", on);
-    editBtn.textContent = on ? "完成編輯" : "✏️ 編輯";
-    document.querySelectorAll(".editable").forEach(el => {
-      el.contentEditable = on ? "true" : "false";
-      el.spellcheck = false;
-    });
-  }
-  editBtn.addEventListener("click", () => setEditing(!editing));
-
-  // 儲存
-  function collectText(){
-    const obj = {};
-    document.querySelectorAll(".editable[data-key]").forEach(el => obj[el.dataset.key] = el.innerText.trim());
-    return obj;
-  }
-  saveBtn.addEventListener("click", () => {
-    localStorage.setItem(TEXT_KEY, JSON.stringify(collectText()));
-    const old = saveBtn.textContent;
-    saveBtn.textContent = "✓ 已暫存";
-    setTimeout(() => saveBtn.textContent = old, 1200);
-  });
-
-  // 匯出目前版本：把當下 DOM 文字直接包進新 HTML
-  exportBtn.addEventListener("click", () => {
-    const clone = document.documentElement.cloneNode(true);
-    clone.querySelector("body")?.classList.remove("editing");
-    clone.querySelectorAll(".editable").forEach(el => el.setAttribute("contenteditable","false"));
-    const eb = clone.querySelector("#edit");
-    if (eb) { eb.classList.remove("edit-on"); eb.textContent = "✏️ 編輯"; }
-
-    // 匯出檔使用新的 localStorage 命名空間，避免舊檔的已存文字覆蓋新快照。
-    const stamp = Date.now();
-    clone.querySelectorAll("script").forEach(sc => {
-      sc.textContent = sc.textContent
-        .replace('const TEXT_KEY = "tokyo12_text_v8_toy_conditional";', `const TEXT_KEY = "tokyo12_text_export_toy_${stamp}";`)
-        .replace('const CHECK_KEY = "tokyo12_checks_v8_toy_conditional";', `const CHECK_KEY = "tokyo12_checks_export_toy_${stamp}";`);
-    });
-
-    const blob = new Blob(["\n" + clone.outerHTML.replace(/^<!doctype html>\s*/i,"")], {type:"text/html;charset=utf-8"});
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "東京12日行程_最新版.html";
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-  });
 })();
 </script>
 </body>
